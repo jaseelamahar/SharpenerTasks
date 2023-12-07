@@ -40,6 +40,17 @@ function addItem(e) {
   // Append li to list
   itemList.appendChild(li);
 }
+// Retrieve existing list items
+var existingItems = itemList.querySelectorAll('.list-group-item');
+
+// Loop through existing items and add edit buttons
+existingItems.forEach(function(item) {
+    var editBtn = document.createElement('button');
+    editBtn.className = 'btn btn-primary btn-sm float-right edit';
+    editBtn.appendChild(document.createTextNode('Edit'));
+    item.appendChild(editBtn);
+});
+
 
 // Remove item
 function removeItem(e){
